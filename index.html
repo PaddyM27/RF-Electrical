@@ -1472,7 +1472,7 @@
           </div>
           <div>
             <div class="contact-detail-label">Phone</div>
-            <div class="contact-detail-value">+353 87 000 0000</div>
+            <div class="contact-detail-value">+353 89 469 2200</div>
           </div>
         </div>
         <div class="contact-detail">
@@ -1500,8 +1500,18 @@
       </div>
     </div>
 
-    <div class="contact-form-card reveal reveal-d2">
-      <form action="#" method="POST" onsubmit="handleFormSubmit(event)">
+    <div class="contact-form-card reveal reveal-d2" id="contact-form-card">
+
+      <!-- Confirmation panel — hidden until submission -->
+      <div id="form-confirmation" style="display:none; text-align:center; padding: 3rem 2rem;">
+        <div style="width:64px;height:64px;background:rgba(34,197,94,0.12);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3 style="font-family:'Inter',sans-serif;font-size:1.4rem;font-weight:700;color:#fff;margin-bottom:0.75rem;letter-spacing:-0.02em;">Enquiry Sent!</h3>
+        <p style="color:var(--muted);font-size:0.95rem;line-height:1.7;max-width:34ch;margin:0 auto;">Your message has been sent via WhatsApp. We'll be back to you within 24 hours.</p>
+      </div>
+
+      <form action="#" method="POST" onsubmit="handleFormSubmit(event)" id="contact-form">
         <div class="form-row">
           <div class="form-group">
             <label class="form-lbl" for="name">Full Name</label>
@@ -1585,7 +1595,7 @@
       <div>
         <div class="footer-col-title">Contact</div>
         <ul class="footer-links">
-          <li><a href="tel:+353870000000">+353 87 000 0000</a></li>
+          <li><a href="tel:+353894692200">+353 89 469 2200</a></li>
           <li><a href="mailto:info@rfelectrical.ie">info@rfelectrical.ie</a></li>
           <li><a href="#contact">Get a Quote</a></li>
           <li><a href="#contact">Book a Consultation</a></li>
@@ -1611,7 +1621,7 @@
 
 <!-- ═══════════════════════════════ FLOATING CALL BTN ════════════════════════ -->
 <div class="float-call" aria-label="Call us">
-  <a href="tel:+353870000000" aria-label="Call RF Electrical Contracting now">
+  <a href="tel:+353894692200" aria-label="Call RF Electrical Contracting now">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
       <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.72 2 2 0 012-2.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7a16 16 0 006.29 6.29l.38-.38a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
     </svg>
@@ -1766,14 +1776,12 @@
 
     const text = parts.join(' ');
 
-    // Replace with the business owner's WhatsApp number (include country code, no + or spaces)
-    const waNumber = '353870000000';
+    const waNumber = '353894692200';
     window.open('https://wa.me/' + waNumber + '?text=' + encodeURIComponent(text), '_blank');
 
-    const btn = f.querySelector('button[type=submit]');
-    btn.textContent = '✓ Enquiry sent via WhatsApp';
-    btn.style.background = '#22C55E';
-    btn.disabled = true;
+    // Hide form, show confirmation
+    document.getElementById('contact-form').style.display = 'none';
+    document.getElementById('form-confirmation').style.display = 'block';
   }
 </script>
 </body>
