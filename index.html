@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RF Electrical Contracting — Certified Electrical Contractors</title>
   <meta name="description" content="RF Electrical Contracting — certified electrical contractors specialising in solar, domestic, commercial, and CCTV & security installations. Get a free quote." />
-  <link rel="icon" type="image/jpeg" href="WhatsApp%20Image%202026-03-19%20at%2016.39.55.jpeg" />
-  <link rel="apple-touch-icon" href="WhatsApp%20Image%202026-03-19%20at%2016.39.55.jpeg" />
+  <link rel="icon" type="image/jpeg" href="no%20background%202.png" />
+  <link rel="apple-touch-icon" href="no%20background%202.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -55,12 +55,13 @@
     }
     .nav-inner {
       max-width: 1200px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+      display: flex; align-items: center; justify-content: flex-start; gap: 2rem;
     }
     .logo {
       display: flex; align-items: center; gap: 0.1rem;
-      text-decoration: none; flex-shrink: 0;
+      text-decoration: none; flex-shrink: 0; margin-left: 20%;
     }
+    .logo img { transition: height 0.35s ease; }
     .logo-rf {
       font-family: 'Inter', system-ui, sans-serif;
       font-size: 1.7rem; font-weight: 800;
@@ -89,7 +90,7 @@
     }
     .nav-links a:hover { color: var(--white); }
     .nav-links a:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; border-radius: 2px; }
-    .nav-right { display: flex; align-items: center; gap: 1rem; flex-shrink: 0; }
+    .nav-right { display: flex; align-items: center; gap: 1rem; flex-shrink: 0; margin-left: auto; }
     .hamburger-btn {
       display: none; background: none; border: none;
       cursor: pointer; padding: 0.375rem; color: var(--white);
@@ -180,19 +181,19 @@
     }
     .orb-1 {
       width: 760px; height: 760px;
-      background: radial-gradient(circle, rgba(232,114,12,0.2) 0%, transparent 68%);
+      background: radial-gradient(circle, rgba(232,114,12,0.07) 0%, transparent 68%);
       top: -220px; right: -180px;
       animation: driftOrb 12s ease-in-out infinite;
     }
     .orb-2 {
       width: 520px; height: 520px;
-      background: radial-gradient(circle, rgba(240,140,48,0.12) 0%, transparent 68%);
+      background: radial-gradient(circle, rgba(240,140,48,0.05) 0%, transparent 68%);
       bottom: -80px; left: 0%;
       animation: driftOrb 15s ease-in-out infinite reverse;
     }
     .orb-3 {
       width: 320px; height: 320px;
-      background: radial-gradient(circle, rgba(192,90,8,0.18) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(192,90,8,0.06) 0%, transparent 70%);
       top: 35%; right: 28%;
       animation: driftOrb 9s ease-in-out infinite;
       animation-delay: -4s;
@@ -248,6 +249,21 @@
       background: linear-gradient(135deg, var(--blue-lt) 0%, #F8B060 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       background-clip: text;
+    }
+    .hero-headline .chrome {
+      font-style: normal;
+      background: linear-gradient(180deg,
+        #888888 0%,
+        #ffffff 22%,
+        #cccccc 36%,
+        #888888 50%,
+        #ffffff 64%,
+        #cccccc 78%,
+        #888888 100%
+      );
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6));
     }
     .hero-sub {
       font-size: 1.15rem; font-weight: 400;
@@ -824,6 +840,14 @@
       .nav-links { display: none; }
       .hamburger-btn { display: block; }
       .float-call { display: block; }
+      .logo { margin-left: 0 !important; margin-top: -0.5rem; }
+      .logo img { height: 110px !important; }
+      .nav-inner { position: relative; }
+      #nav-cta { position: absolute; left: 50%; transform: translateX(-50%); }
+      #nav.scrolled { padding: 0.4rem 1rem; }
+      #nav.scrolled .logo img { height: 52px !important; }
+      .authority-certs { display: none !important; }
+      #authority { padding: 1.5rem 1.25rem; }
       .svc-cards, .testi-grid, .why-grid { grid-template-columns: 1fr; }
       .serve-grid { grid-template-columns: 1fr; }
       .serve-card { height: 420px; }
@@ -841,27 +865,36 @@
     }
     @media (max-width: 600px) {
       .footer-top { grid-template-columns: 1fr; }
+      .footer-brand { text-align: center; }
+      .footer-brand p { max-width: 100%; }
+      .footer-badges { justify-content: center; }
+      .footer-bottom { flex-direction: column; align-items: center; text-align: center; }
       .form-row { grid-template-columns: 1fr; }
+      .section-label { font-size: 0.68rem; }
     }
     @media (max-width: 480px) {
+      /* Nav */
+      #nav { padding: 0.5rem 1rem; }
+
       /* Hero */
-      .hero-content { padding: 7rem 1.25rem 4rem; }
-      .hero-headline { font-size: clamp(2.6rem, 11vw, 3.5rem); }
-      .hero-sub { font-size: 0.98rem; margin-bottom: 2rem; }
+      .hero-content { padding: 5rem 1.25rem 3rem; }
+      .hero-headline { font-size: clamp(2.2rem, 10vw, 3rem); }
+      .hero-sub { font-size: 0.95rem; margin-bottom: 1.75rem; }
       .hero-ctas { gap: 0.75rem; width: 100%; }
       .hero-ctas .btn-primary, .hero-ctas .btn-ghost { width: 100%; justify-content: center; }
-      .hero-trust { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem 0.5rem; margin-top: 0; }
+      .hero-trust { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem 0.5rem; margin-top: 0; }
       .trust-sep { display: none; }
-      .trust-item { font-size: 0.72rem; }
+      .trust-item { font-size: 0.85rem; }
 
       /* Authority */
       #authority { padding: 2.25rem 1.25rem; scroll-margin-top: 4.5rem; }
       .cert-divider { display: none; }
-      .authority-certs { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; width: 100%; }
-      .cert-badge { align-items: flex-start; }
-      .authority-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; width: 100%; margin-top: 0.5rem; }
-      .stat { text-align: left; }
+      .authority-certs { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; width: 100%; justify-items: center; }
+      .cert-badge { align-items: center; }
+      .authority-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; width: 100%; margin-top: 0.5rem; }
+      .stat { text-align: center; }
       .stat-number { font-size: 1.9rem; }
+      .stat-label { font-size: 0.65rem; }
       .stat-divider { display: none; }
 
       /* Services */
@@ -920,7 +953,7 @@
 <nav id="nav">
   <div class="nav-inner">
     <a href="#" class="logo" aria-label="RF Electrical Contracting — Home">
-      <img src="WhatsApp%20Image%202026-03-19%20at%2016.39.55.jpeg" alt="RF Electrical Contracting" style="height:52px;width:auto;display:block;" />
+      <img src="no%20background%202.png" alt="RF Electrical Contracting" style="height:120px;width:auto;display:block;" />
     </a>
     <ul class="nav-links" role="list">
       <li><a href="#services">Services</a></li>
@@ -963,7 +996,7 @@
       <span class="eyebrow-dot"></span>
       Certified Electrical Contractors
     </div>
-    <h1 class="hero-headline">Electrical Work.<br><em>Done Right.</em></h1>
+    <h1 class="hero-headline"><span class="chrome">RF Electrical Contracting.</span><br>Electrical Contracting.<br><em>Done Right.</em></h1>
     <p class="hero-sub">From large-scale commercial installations to residential rewires and EV charging — RF Electrical Contracting delivers work that meets the standard. Certified, reliable, and built to last.</p>
     <div class="hero-ctas">
       <a href="#contact" class="btn-primary">
@@ -980,7 +1013,7 @@
       <span class="trust-sep"></span>
       <span class="trust-item">
         <svg class="trust-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="3,8 6.5,12 13,5"/></svg>
-        RECI Registered
+        SEAI Registered
       </span>
       <span class="trust-sep"></span>
       <span class="trust-item">
@@ -991,6 +1024,16 @@
       <span class="trust-item">
         <svg class="trust-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="3,8 6.5,12 13,5"/></svg>
         5★ Google Rating
+      </span>
+      <span class="trust-sep"></span>
+      <span class="trust-item">
+        <svg class="trust-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="3,8 6.5,12 13,5"/></svg>
+        PSA Licensed
+      </span>
+      <span class="trust-sep"></span>
+      <span class="trust-item">
+        <svg class="trust-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="3,8 6.5,12 13,5"/></svg>
+        EV Installer
       </span>
     </div>
   </div>
@@ -1009,13 +1052,13 @@
       </div>
       <div class="cert-divider" aria-hidden="true"></div>
       <div class="cert-badge">
-        <div class="cert-logo">RECI</div>
-        <div class="cert-label">RECI Reg.</div>
+        <div class="cert-logo">SEAI</div>
+        <div class="cert-label">SEAI Reg.</div>
       </div>
       <div class="cert-divider" aria-hidden="true"></div>
       <div class="cert-badge">
-        <div class="cert-logo">ECIR<br>CERT</div>
-        <div class="cert-label">ECIR Certified</div>
+        <div class="cert-logo">PSA</div>
+        <div class="cert-label">PSA Licensed</div>
       </div>
       <div class="cert-divider" aria-hidden="true"></div>
       <div class="cert-badge">
@@ -1223,7 +1266,7 @@
           </svg>
         </div>
         <div class="why-title">Fully Certified & Insured</div>
-        <div class="why-text">Safe Electric registered, RECI accredited, and fully insured for domestic and commercial works. These aren't just logos — they're the reason your installation is compliant and your warranty is valid.</div>
+        <div class="why-text">Safe Electric registered, SEAI registered, and fully insured for domestic and commercial works. These aren't just logos — they're the reason your installation is compliant and your warranty is valid.</div>
       </div>
       <div class="why-card reveal reveal-d4">
         <div class="why-num">03</div>
@@ -1485,7 +1528,7 @@
           </div>
           <div>
             <div class="contact-detail-label">Email</div>
-            <div class="contact-detail-value">info@rfelectrical.ie</div>
+            <div class="contact-detail-value">ronan@rfelectricalcontracting.com</div>
           </div>
         </div>
         <div class="contact-detail">
@@ -1566,13 +1609,13 @@
     <div class="footer-top">
       <div class="footer-brand">
         <a href="#" class="logo" aria-label="RF Electrical Contracting — Home">
-          <img src="WhatsApp%20Image%202026-03-19%20at%2016.39.55.jpeg" alt="RF Electrical Contracting" style="height:64px;width:auto;display:block;" />
+          <img src="no%20background%202.png" alt="RF Electrical Contracting" style="height:120px;width:auto;display:block;" />
         </a>
-        <p>Certified electrical contractors for solar, domestic, commercial, and security installations. Safe Electric registered, RECI accredited, fully insured.</p>
+        <p>Certified electrical contractors for solar, domestic, commercial, and security installations. Safe Electric registered, SEAI registered, fully insured.</p>
         <div class="footer-badges">
           <span class="footer-badge">SAFE ELECTRIC</span>
-          <span class="footer-badge">RECI</span>
-          <span class="footer-badge">ECIR CERT</span>
+          <span class="footer-badge">SEAI</span>
+          <span class="footer-badge">PSA</span>
           <span class="footer-badge">EV INSTALLER</span>
         </div>
       </div>
@@ -1598,7 +1641,7 @@
         <div class="footer-col-title">Contact</div>
         <ul class="footer-links">
           <li><a href="tel:+353894692200">+353 89 469 2200</a></li>
-          <li><a href="mailto:info@rfelectrical.ie">info@rfelectrical.ie</a></li>
+          <li><a href="mailto:ronan@rfelectricalcontracting.com">ronan@rfelectricalcontracting.com</a></li>
           <li><a href="#contact">Get a Quote</a></li>
           <li><a href="#contact">Book a Consultation</a></li>
         </ul>
@@ -1635,7 +1678,7 @@
   const nav = document.getElementById('nav');
   const navCta = document.getElementById('nav-cta');
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 60) {
+    if (window.scrollY > 10) {
       nav.classList.add('scrolled');
       navCta.style.display = 'inline-flex';
     } else {
